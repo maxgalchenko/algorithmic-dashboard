@@ -31,7 +31,6 @@ def backtest(request: BacktestRequest) -> BacktestResponse:
             status_code=400, detail="Fast MA must be smaller than Slow MA"
         )
 
-    # Run the engine
     try:
         result = run_backtest(request.ticker, request.fast_ma, request.slow_ma)
         return result
