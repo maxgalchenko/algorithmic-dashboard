@@ -1,12 +1,7 @@
 import yfinance as yf
-from pydantic import BaseModel
 import numpy as np
 import pandas as pd
-
-
-class BacktestResponse(BaseModel):
-    total_return: str
-    sharpe_ratio: float
+from schemas import BacktestResponse
 
 
 def run_backtest(ticker: str, fast_ma: int, slow_ma: int) -> BacktestResponse:

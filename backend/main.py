@@ -1,13 +1,7 @@
 from typing import Union
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from strategy import run_backtest, BacktestResponse
-
-
-class BacktestRequest(BaseModel):
-    ticker: str
-    fast_ma: int
-    slow_ma: int
+from schemas import BacktestRequest, BacktestResponse
+from strategy import run_backtest
 
 
 app = FastAPI()
